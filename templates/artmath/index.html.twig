@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ArtmathController!{% endblock %}
+{% block title %}Art mathématique{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,20 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Paramètres :</h1>
+    <!-- C'est grâce à l'attribut name que l'on peut récupérer la valeur associée dans symfony -->
+    <form method="post" action="/calculer">
+        <div>
+            <label for="Dimension" class="form-label">Dimension</label>
+                <input type="range" class="form-range" min="0" max="6" step="1" id="dimension" name="dimension">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" name="calculer" value="1">Calculer</button>
+            <button type="submit" class="btn btn-danger" name="imprimer" value="1">Imprimer</button>
+        </div>
+    </form>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/etudrt/ArtMathematique/src/Controller/ArtmathController.php'|file_link(0) }}">src/Controller/ArtmathController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/etudrt/ArtMathematique/templates/artmath/index.html.twig'|file_link(0) }}">templates/artmath/index.html.twig</a></code></li>
-    </ul>
+    <h1> Résultat : </h1>
+    <img src="{{fichier}}" width="100%">
 </div>
 {% endblock %}
