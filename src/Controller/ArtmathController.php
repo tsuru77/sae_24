@@ -31,6 +31,16 @@ use Symfony\Component\HttpFoundation\File\File;
 class ArtmathController extends AbstractController
 {
     /**
+     * @Route("/", name="racine")
+     */
+    public function racine() : Response
+    {
+        // Redirige vers /artmath si on va sur le site sans
+        //  indiquer le nom de la route
+        return $this->redirectToRoute('app_artmath');
+    }
+
+    /**
      * @Route("/artmath", name="app_artmath")
      */
     public function index(): Response
