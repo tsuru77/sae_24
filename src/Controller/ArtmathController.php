@@ -70,7 +70,7 @@ class ArtmathController extends AbstractController
 
         // Retourne un message si l'éxécution c'est mal passée
         if (!$process->isSuccessful())
-            return new Response ("Erreur lors de l'éxécution du script Python.");    
+            return new Response ("Erreur lors de l'éxécution du script Python :<br>".$process->getErrorOutput());    
 
         // A t'on appuyé sur calculer ?
         if ($calculer!=NULL)
