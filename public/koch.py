@@ -18,6 +18,7 @@ In no event shall the authors or copyright holder be liable for any claim damage
 # apt install python3-pip
 # apt install python3-matplotlib
 
+
 import sys # Pour récupérer les paramètres passés en ligne de commande
 import matplotlib.pyplot as plt
 import math

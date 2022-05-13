@@ -83,5 +83,42 @@ class ArtmathController extends AbstractController
                 'fichier' => $fichier,
             ]);
         }
+        
+
+        //----------------------------------Partie de la 2eme Figure----------------------
+
+        // Récupère les paramètres issus du formulaire (on indique le champ name)
+
+        $hasard = $request -> request -> get("hasard") ;
+        $hasardangle = $request -> request -> get("hasardangle") ;
+        $nbcolonnes = $request -> request -> get("nbcolonnes") ;
+        $nblignes = $request -> request -> get("nblignes") ; 
+
+        // Pour les boutons : si appui contenu champ value sinon NULL
+        $cree  = $request -> request -> get("cree");
+        $print  = $request -> request -> get("print");
+        
+        // Oui : Appelle le script Python nees_carre.py qui se trouve dans le répertoire /public
+        $run = new Process(['python3','nees_carre.py',$hasard, $hasardangle, $nbcolonnes, $nblignes]);
+        $run -> run();
+        // Récupère la valeur de retour renvoyé par le script python
+        $file=$run->getOutput();
+        
+        // Retourne un message si l'éxécution c'est mal passée
+        if (!$run->isSuccessful())
+            return new Response ("Erreur lors de l'éxécution du script Python :<br>".$run->getErrorOutput());    
+
+
+        // A t'on appuyé sur calculer ?
+        if ($cree!=NULL)
+            return $this->render('artmath/index.html.twig', [
+                'file' => $file,
+            ]);
+        else {
+            // On a appuyé sur imprimer
+            return $this->render('artmath/imprimer.html.twig', [
+                'file' => $file,
+                ]);
+        }
     }
 }

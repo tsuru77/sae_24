@@ -9,10 +9,10 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Paramètres :</h1>
+    <h1>Paramètres premiere figure :</h1>
     <!-- C'est grâce à l'attribut name que l'on peut récupérer la valeur associée dans symfony -->
     <form method="post" action="/calculer">
-        <div>
+        <div>z
             <label for="Dimension" class="form-label">Dimension</label>
                 <input type="range" class="form-range" min="0" max="6" step="1" id="dimension" name="dimension">
         </div>
@@ -24,5 +24,46 @@
 
     <h1> Résultat : </h1>
     <img src="{{fichier}}" width="100%">
+</div>
+
+<div>
+
+<h1>Paramètres 2eme figure :</h1>
+
+    <form method="post" action="/calculer">
+        <div>
+            <label for="Hasard" class="form-label">Hasard</label>
+                <input type="range" class="form-range" min="0" max="6" step="1" id="hasard" name="hasard">
+        </div>
+
+        <div>
+            <label for="Hasard d'angle" class="form-label">Hasard d'angle</label>
+                <input type="range" class="form-range" min="0" max="6" step="1" id="hasardangle" name="hasardangle">
+        </div>
+
+        <div>
+            <label for="Nombre de colonnes" class="form-label">Nombre de colonnes</label>
+                <input type="range" class="form-range" min="0" max="6" step="1" id="dimension" name="nbcolonnes">
+        </div>
+
+        <div>
+            <label for="Nombre de lignes" class="form-label">Nombre de lignes</label>
+                <input type="range" class="form-range" min="0" max="6" step="1" id="nblignes" name="nblignes">
+        </div>
+        
+
+        <div>
+            <button type="submit" class="btn btn-primary" name="cree" value="1">Calculer</button>
+            <button type="submit" class="btn btn-danger" name="print" value="1">Imprimer</button>
+        </div>
+    </form>
+
+    <h1> Résultat : </h1>
+    <img src="{{file}}" width="100%">
+
+
+
+
+
 </div>
 {% endblock %}
