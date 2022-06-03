@@ -57,7 +57,7 @@ class ArtmathController extends AbstractController
     public function neescarre(): Response
     {
         return $this->render('artmath/ness_carre.html.twig', [
-            'file' => '',
+            'file' => '', 
         ]);
     }
     
@@ -179,7 +179,7 @@ class ArtmathController extends AbstractController
             // Récupère les paramètres issus du formulaire (on indique le champ name)
     
         $cercle1_rayon = $request -> request -> get("cercle1_rayon") ;
-        $espace = $request -> request -> get("espace") ;
+        $espaces = $request -> request -> get("espaces") ;
         $traits = $request -> request -> get("traits") ;
         $angle = $request -> request -> get("angle") ; 
     
@@ -188,7 +188,7 @@ class ArtmathController extends AbstractController
         $printer  = $request -> request -> get("printer");
             
         // Oui : Appelle le script Python vortex.py qui se trouve dans le répertoire /public
-        $gen = new Process(['python3','vortex.py',$cercle1_rayon, $espace, $traits, $angle]);
+        $gen = new Process(['python3','vortex.py',$cercle1_rayon, $espaces, $traits, $angle]);
         $gen -> run();
         // Récupère la valeur de retour renvoyé par le script python
         $figure="vortex.png";
