@@ -3,7 +3,7 @@ import math
 import random
 from pygame.locals import *
 import sys
-import matplotlib.pyplot as plt
+
 
 
 
@@ -44,8 +44,4 @@ for i in range(14):
     y += 0.02
 
 
-fig=plt.figure();
-
-fichier='vortex.png'
-fig.savefig(fichier)
-print(fichier)
+pygame.image.save(surface, "vortex.png")
