@@ -26,7 +26,8 @@ angle = 10              # 15 avg max 150
 
 pygame.init()       #démarr
 
-
+surface = pygame.surface.Surface((800, 800)) #crée la fenetre avec une certaine dimension.
+surface.fill((0, 0, 0))     #remplis la fenetre avec une couleur
 
 
 x = 400
