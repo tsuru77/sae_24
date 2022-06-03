@@ -17,8 +17,6 @@ In no event shall the authors or copyright holder be liable for any claim damage
 #   pip3 install pygame
 # Attention: il faut un linux avec une interface graphique d'installé
 #   car on utilise sdl, un simple terminal ne marche pas avec pygame.
-
-from msilib.schema import File
 import sys 		# Pour récupérer les paramètres passés en ligne de commande
 from math import *	# Importe toutes les fonctions de math (cos, ...)
 import random		# Pour tirer des nombres au hasard

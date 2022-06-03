@@ -11,8 +11,8 @@
 <div class="example-wrapper">
     <h1>Paramètres premiere figure :</h1>
     <!-- C'est grâce à l'attribut name que l'on peut récupérer la valeur associée dans symfony -->
-    <form method="post" action="/calculer">
-        <div>z
+    <form method="post" action="/calculer">  <!-- le "/calculer" fait reference a la fonction pour afficher la figure koch dans le controller-->
+        <div>
             <label for="Dimension" class="form-label">Dimension</label>
                 <input type="range" class="form-range" min="0" max="6" step="1" id="dimension" name="dimension">
         </div>
@@ -23,5 +23,7 @@
     </form>
 
     <h1> Résultat : </h1>
-    <img src="{{fichier}}" width="100%">
+    <img src="{{fichier}}" width="100%"> <!-- le permet d'afficher la figure (fichier  qui correspond a la variable $fichier dans le controller)-->
 </div>
+
+{% endblock %}

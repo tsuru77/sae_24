@@ -9,28 +9,31 @@
 </style>
 
 
+<div class="example-wrapper">
+
+<br>
 
 <h1>Paramètres 2eme figure :</h1>
 
-    <form method="post" action="/calculer">
+    <form method="post" action="/calculer2">
         <div>
             <label for="Hasard" class="form-label">Hasard</label>
-                <input type="range" class="form-range" min="0" max="6" step="1" id="hasard" name="hasard">
+                <input type="range" class="form-range" min="0" max="100" step="5" id="hasard" name="hasard">
         </div>
 
         <div>
             <label for="Hasard d'angle" class="form-label">Hasard d'angle</label>
-                <input type="range" class="form-range" min="0" max="6" step="1" id="hasardangle" name="hasardangle">
+                <input type="range" class="form-range" min="0" max="100" step="5" id="hasardangle" name="hasardangle">
         </div>
 
         <div>
             <label for="Nombre de colonnes" class="form-label">Nombre de colonnes</label>
-                <input type="range" class="form-range" min="0" max="6" step="1" id="dimension" name="nbcolonnes">
+                <input type="range" class="form-range" min="0" max="100" step="5" id="dimension" name="nbcolonnes">
         </div>
 
         <div>
             <label for="Nombre de lignes" class="form-label">Nombre de lignes</label>
-                <input type="range" class="form-range" min="0" max="6" step="1" id="nblignes" name="nblignes">
+                <input type="range" class="form-range" min="0" max="100" step="5" id="nblignes" name="nblignes">
         </div>
         
 
@@ -39,6 +42,9 @@
             <button type="submit" class="btn btn-danger" name="print" value="1">Imprimer</button>
         </div>
     </form>
+
+
+    <br>
 
     <h1> Résultat : </h1>
     <img src="{{file}}" width="100%">
