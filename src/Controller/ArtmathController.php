@@ -130,6 +130,7 @@ class ArtmathController extends AbstractController
         }
     }
 
+    //test
         //----------------------------------Partie de la 2eme Figure----------------------
         /**
         * @Route("/calculer2", name="calculer2")

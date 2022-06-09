@@ -9,19 +9,21 @@ import sys
 
 # parametres de la fonction python : rayon cercle, couleur fond, couleur trait,
 
-
 cercle1_rayon = int(sys.argv[1])
 espaces = int(sys.argv[2])
 traits = int(sys.argv[3])
 angle = int(sys.argv[4])
+color = int(sys.argv[5])
+hasard_color = int(sys.argv[6])
 
 '''
 cercle1_rayon = 100     #min 1 max 400
 espaces = 50            # min 10 max 1000
 traits = 10             # min 10 max 150
 angle = 10              # 15 avg max 150
-'''
+hasard_color = 20
 
+'''
 
 
 pygame.init()       #démarr
@@ -35,7 +37,7 @@ y = 400
 
 for i in range(14):
   for l in range(traits):   #min 10 max 150
-    pygame.draw.line(surface, (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)), [400 + 1200 * math.cos(x + 600), 400 + 1200 * math.sin(y + 600)], [400 + cercle1_rayon * math.cos(x + angle), 400 +cercle1_rayon * math.sin(y + angle)], 1)
+    pygame.draw.line(surface, (random.randint(0, hasard_color), random.randint(0, hasard_color), random.randint(0, hasard_color)), [400 + 1200 * math.cos(x + 600), 400 + 1200 * math.sin(y + 600)], [400 + cercle1_rayon * math.cos(x + angle), 400 +cercle1_rayon * math.sin(y + angle)], 1)
     x += 0.005
     y += 0.005
 
